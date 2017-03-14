@@ -1,0 +1,22 @@
+// This is the top-level scss file. Import all other files in here.
+
+/*
+While prototyping we load all of semantic-ui
+eventually we pair this down into calling only the subcomponents we want in our code base
+*/
+@import '~semantic-ui-sass/app/assets/stylesheets/semantic-ui/globals/all';
+@import '~semantic-ui-sass/app/assets/stylesheets/semantic-ui/elements/all';
+@import '~semantic-ui-sass/app/assets/stylesheets/semantic-ui/collections/all';
+@import '~semantic-ui-sass/app/assets/stylesheets/semantic-ui/views/all';
+@import '~semantic-ui-sass/app/assets/stylesheets/semantic-ui/modules/all';
+
+
+@import './base/variables';
+@import './base/typography';
+@import './base/mixins';
+@import './base/extendables';
+
+@import 'components/molecules/main-nav';
+
+@import './components/pages/global';
+@import './components/pages/home';

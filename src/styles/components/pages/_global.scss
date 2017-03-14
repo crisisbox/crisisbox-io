@@ -1,0 +1,6 @@
+.container {
+  @extend .ui;
+  @extend .vertical;
+  @extend .stripe;
+  @extend .segment;
+}

@@ -56,8 +56,8 @@ class App extends Component {
     return (
       <Container fluid>
         <Marquee metadata={content.metadata} />
-        <Container text className="ui vertical stripe segment" textAlign="left">
-          <Menu widths={this.state.menuItems.length} defaultActiveIndex={0} items={this.state.menuItems} onItemClick={this.changeSection}/>
+        <Container text className="wrapper-main">
+          <Menu className="nav-main" widths={this.state.menuItems.length} defaultActiveIndex={0} items={this.state.menuItems} onItemClick={this.changeSection}/>
           <SectionBody md={current_section.md} />
         </Container>
       </Container>

@@ -1,3 +1,7 @@
+---
+tabLabel: "What is it?"
+---
+
 ## What is Crisisbox?
 
 ### Crisisbox is a rapid response toolkit that makes it easier for volunteers to spontaneously organize to defend marginalized communities from legal threats in times of crisis.

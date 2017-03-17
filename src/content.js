@@ -1,11 +1,4 @@
-// import DoingNow from './content/DoingNow.md'
-// import Features from './content/Features.md'
-// import Intro from './content/Intro.md'
-// import MeasuresOfSuccess from './content/MeasuresOfSuccess.md'
-// import Team from './content/Team.md'
-// import Motivation from './content/Motivation.md'
-
-import marked from 'marked'
+import slugify from 'underscore.string/slugify'
 var allContent = require.context('./content', false, /\.md$/)
 
 const metadata = {
@@ -15,11 +8,13 @@ const metadata = {
 
 var pageContent = [];
 allContent.keys().map(function(key, i) {
-  var modName = './content/'+ key.split('./')[1]
-  console.log("1", modName)
-  // @todo - madeofopeople, get rid of .md from key
-  pageContent[key.split('./')[1]] = require(modName)
-  // console.log( pageContent[key])
+  var modName = key.split('.md')[0].split('./')[1]
+  var modPath = './content/'+ key.split('./')[1]
+  var modSlug = slugify(modName)
+  // console.log(i,"|»", modSlug)
+  // there maybe better ways to do this, but hey, its working.
+  var md = require(modPath)
+  pageContent[modSlug] = md
 })
 
 export default {
@@ -27,4 +22,5 @@ export default {
   pageContent
 }
 
-console.log(pageContent)
+console.log("tabLabel»»",pageContent['doingnow'].tabLabel)
+console.log("pageContent»»",pageContent['doingnow'].__content)

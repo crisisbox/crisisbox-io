@@ -17,7 +17,6 @@ export default class App extends React.Component {
     // this.sections
     this.menuItems
     this.state = {
-      current_section: 'Intro',
       menuItems: [],
     }
   }

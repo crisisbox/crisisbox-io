@@ -1,3 +1,7 @@
+---
+tabLabel: "Features"
+---
+
 ## Features
 
 * secure by default

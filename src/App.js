@@ -1,65 +1,53 @@
 import React from 'react'
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import {Provider} from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import content from './content';
-import _ from 'underscore';
-import Marquee from './Components/Marquee';
-import SectionBody from './Components/SectionBody';
+import content from './content'
+import _ from 'underscore'
+import Marquee from './Components/Marquee'
+import SectionBody from './Components/SectionBody'
+import HomeTabs from './Components/HomeTabs'
+import {Tabs, Tab} from 'material-ui/Tabs'
 
-var sections
-var menuItems
-var state = {
-  current_section: 'Intro',
-  menuItems: [],
-}
+export default class App extends React.Component {
 
-function componentWillMount() {
-  this.loadSections();
-}
-
-function loadSections() {
-  var that = this;
-  _.map(content.sections, function(section, key) {
-    that.sections[key] = {
-      key: key,
-      name: section.slice(0, section.indexOf("\n")),
-      md: section
+  constructor(props) {
+    injectTapEventPlugin();
+    super(props)
+    // this.sections
+    this.menuItems
+    this.state = {
+      current_section: 'Intro',
+      menuItems: [],
     }
-  })
+  }
+
+  //
+  // componentWillMount() {
+  //   this.getTabData();
+  // }
+  //
+  // getTabData() {
+  //   this.setState({sections})
+  // }
+
+
+  // function changeSection(e, { indexName }) {
+  //   this.setState({
+  //     current_section: indexName
+  //   })
+  // }
+
+  render() {
+    // const current_section = this.sections[this.state.current_section]
+    console.log( this.props.content.metadata)
+    return (
+      <MuiThemeProvider>
+        <main className="main">
+          <Marquee metadata={this.props.content.metadata} />
+          <HomeTabs />
+        </main>
+      </MuiThemeProvider>
+    )
+  }
 }
-
-function setState() {
-  menuItems: _.map(this.sections, function(section, key) {
-    return {
-      indexName: key,
-      key,
-      name: section.name,
-    }
-  })
-}
-
-function changeSection(e, { indexName }) {
-  this.setState({
-    current_section: indexName
-  })
-}
-
-const App = props => {
-  const current_section = this.sections[this.state.current_section]
-  return (
-
-    <div>Test</div>
-    // <MuiThemeProvider>
-    //   <main className="main">
-    //     <Marquee metadata={content.metadata} />
-    //     <Toolbar>
-    //       <ToolbarGroup>
-    //       // <Menu className="nav-main" widths={this.state.menuItems.length} defaultActiveIndex={0} items={this.state.menuItems} onItemClick={this.changeSection}/>
-    //       </ToolbarGroup>
-    //     </Toolbar>
-    //   </main>
-    // </MuiThemeProvider>
-  )
-}
-
-export default App;

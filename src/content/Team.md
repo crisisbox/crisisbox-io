@@ -1,4 +1,8 @@
-## Team
+---
+tabLabel: "Our Team"
+---
+
+## Our Team
 
 Crisisbox is developed by a team of activists, developers, and freedom lovers:
 

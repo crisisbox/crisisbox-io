@@ -143,7 +143,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loader: 'raw-loader'
+        loaders: ['markdown-with-front-matter-loader']
       }
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.

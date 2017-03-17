@@ -88,6 +88,7 @@ module.exports = {
           /\.css$/,
           /\.json$/,
           /\.svg$/,
+          /\.scss$/,
           /\.md$/
         ],
         loader: 'url',
@@ -135,6 +136,10 @@ module.exports = {
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
         }
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
       },
       {
         test: /\.md$/,

@@ -7,8 +7,11 @@ require("./styles/application.scss");
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.js';
+import content from './content'
+
+console.log(content.pageContent['DoingNow'])
 
 ReactDOM.render(
-  <App />,
+  <App content={content} />,
   document.getElementById('root')
 );

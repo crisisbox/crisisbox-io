@@ -6,7 +6,7 @@ const metadata = {
   blurb: "a rapid response toolkit",
 }
 
-var pageContent = [];
+var pageContent = {};
 allContent.keys().map(function(key, i) {
   var modName = key.split('.md')[0].split('./')[1]
   var modPath = './content/'+ key.split('./')[1]
@@ -21,6 +21,3 @@ export default {
   metadata,
   pageContent
 }
-
-console.log("tabLabel»»",pageContent['doingnow'].tabLabel)
-console.log("pageContent»»",pageContent['doingnow'].__content)

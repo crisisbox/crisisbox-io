@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import content from './content'
 import _ from 'underscore'
-import Marquee from './Components/Marquee'
+import Hero from './Components/Hero'
 import SectionBody from './Components/SectionBody'
 import HomeTabs from './Components/HomeTabs'
 import {Tabs, Tab} from 'material-ui/Tabs'
@@ -39,12 +39,12 @@ export default class App extends React.Component {
 
   render() {
     // const current_section = this.sections[this.state.current_section]
-    console.log( this.props.content.metadata)
+    var { metadata, pageContent } = this.props.content;
     return (
       <MuiThemeProvider>
         <main className="main">
-          <Marquee metadata={this.props.content.metadata} />
-          <HomeTabs />
+          <Hero metadata={metadata} />
+          <HomeTabs pageContent={pageContent}/>
         </main>
       </MuiThemeProvider>
     )

@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
 
 
-class Marquee extends React.Component {
+class Hero extends React.Component {
 
   // export default class Marquee extends Component
   constructor(props) {
     super(props)
+    this.state = {
+      main_style: {
+        width: "100%",
+        textAlign: "center",
+        backgroundColor: "#330000",
+        color: "white",
+      },
+      img_style: {
+        width: "25%",
+        align: "center"
+      },
+    }
   }
 
   render() {
     var { name, blurb } = this.props.metadata;
 
     return (
-      <div>We didnt convert this to mui</div>
+      <div style={this.state.main_style} className="hero">
+        <img style={this.state.img_style} src={"/build/img/4-redLogo-TransparentBG-crop.png"}/>
+        <h1>{name}</h1>
+        <h2>{blurb}</h2>
+
+      </div>
+
       // <Container className="ui fluid inverted vertical masthead center aligned segment">
       //   <Grid columns={2}>
       //     <Grid.Column >
@@ -32,4 +50,4 @@ class Marquee extends React.Component {
   }
 }
 
-export default Marquee
+export default Hero

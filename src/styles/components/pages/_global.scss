@@ -4,3 +4,20 @@
   // @extend .stripe;
   // @extend .segment;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    padding: 0.5em 0.75em;
+    line-height: 1.25;
+    border-bottom: 1px #dedede solid;
+
+  }
+}

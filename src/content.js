@@ -11,9 +11,8 @@ console.log(allContent)
 allContent.keys().map(function(key) {
   var md = allContent(key)
   var modSlug = slugify(key.split('.md')[0].split('./')[1])
-  // console.log(i,"|»", modSlug)
-  // there maybe better ways to do this, but hey, its working.
   pageContent[modSlug] = md
+  console.log(pageContent[modSlug])
 })
 
 export default {

@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
 class SectionBody extends React.Component {
   render() {
     return (
-      <div className="container">
-        <div dangerouslySetInnerHTML={""}/>
+      <div className='container'>
+        <div dangerouslySetInnerHTML={''}/>
       </div>
     )
   }

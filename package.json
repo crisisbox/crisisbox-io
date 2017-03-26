@@ -70,7 +70,8 @@
     "extract-text-webpack-plugin": "1.0.1",
     "webpack-manifest-plugin": "1.1.0",
     "sasslint-webpack-plugin": "^1.0.4",
-    "dotenv": "2.0.0"
+    "dotenv": "2.0.0",
+    "roboto-fontface": "^0.7.0"
   },
   "babel": {
     "presets": [

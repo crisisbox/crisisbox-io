@@ -20,9 +20,7 @@ export default class HomeTabs extends React.Component {
   renderTabs() {
     var that = this;
     var tabs = [];
-    var c = console;
     tabs = _.map(that.props.pageContent, function(page, key) {
-      c.log( page )
       return (
         <Tab key={key} label={page.tabLabel} value={key}>
           {renderHTML(page.__content)}
@@ -35,7 +33,7 @@ export default class HomeTabs extends React.Component {
 
   render() {
     return (
-      <Tabs value={this.state.value} onChange={this.handleChange.bind(this)}>
+      <Tabs className='home-tabs' value={this.state.value} onChange={this.handleChange.bind(this)}>
           {this.renderTabs()}
       </Tabs>
     );

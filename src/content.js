@@ -7,7 +7,6 @@ const metadata = {
 }
 
 var pageContent = {};
-console.log(allContent)
 allContent.keys().map(function(key) {
   var md = allContent(key)
   var modSlug = slugify(key.split('.md')[0].split('./')[1])

@@ -25,7 +25,7 @@ class Hero extends React.Component {
     const blurb = this.props.metadata.blurb;
     return (
       <div style={this.state.main_style} className='hero'>
-        <img style={this.state.img_style} src={'/build/img/4-redLogo-TransparentBG-crop.png'}/>
+        <img style={this.state.img_style} src={'img/4-redLogo-TransparentBG-crop.png'}/>
         <h1>{name}</h1>
         <h2>{blurb}</h2>
 

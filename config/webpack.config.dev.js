@@ -7,21 +7,19 @@ var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeMod
 var sassLintPlugin = require('sasslint-webpack-plugin');
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
-var publicPath = '/';
+var publicPath = "/";
+
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
 var publicUrl = '';
 // Get environment variables to inject into our app.
 var env = getClientEnvironment(publicUrl);
-// Note: defined here because it will be used more than once.
-const cssFilename = 'static/css/[name].[contenthash:8].css';
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -136,7 +134,7 @@ module.exports = {
       // sass it up
       {
         test: /\.scss/,
-        loader: ExtractTextPlugin.extract('css!sass')
+        loaders: ['style','css','sass']
       },
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -211,10 +209,7 @@ module.exports = {
     // to restart the development server for Webpack to discover it. This plugin
     // makes the discovery automatic so you don't have to restart.
     // See https://github.com/facebookincubator/create-react-app/issues/186
-    new WatchMissingNodeModulesPlugin(paths.appNodeModules),
-    new ExtractTextPlugin(cssFilename, {
-      allChunks: true
-    })
+    new WatchMissingNodeModulesPlugin(paths.appNodeModules)
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

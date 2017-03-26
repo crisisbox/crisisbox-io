@@ -7,8 +7,26 @@ export default class HomeTabs extends React.Component {
 
   constructor(props) {
     super(props);
+    this.styles = {
+      tabholder: {
+        backgroundColor: '#cacaca'
+      },
+      tabs: {
+        color: '#333'
+      },
+      content: {
+        position: 'absolute',
+        left: '20%',
+        top: '5em',
+        padding: '3em',
+        maxWidth: '27em',
+        margin: '0 auto'
+      },
+      inkBar: {
+        position: ''
+      }
+    }
     this.state = {
-      value: '1_intro',
     };
     this.renderTabs = this.renderTabs.bind(this);
   }
@@ -22,7 +40,7 @@ export default class HomeTabs extends React.Component {
     var tabs = [];
     tabs = _.map(that.props.pageContent, function(page, key) {
       return (
-        <Tab key={key} label={page.tabLabel} value={key}>
+        <Tab key={key} label={page.tabLabel} value={key} buttonStyle={that.styles.tabs}>
           {renderHTML(page.__content)}
         </Tab>
       )
@@ -33,7 +51,14 @@ export default class HomeTabs extends React.Component {
 
   render() {
     return (
-      <Tabs className='home-tabs' value={this.state.value} onChange={this.handleChange.bind(this)}>
+      <Tabs
+        tabItemContainerStyle={this.styles.tabholder}
+        tabTemplateStyle={this.styles.tabs}
+        contentContainerClassName="tab-content"
+        contentContainerStyle={this.styles.content}
+        className='home-tabs' value={this.state.value}
+        initialSelectedIndex={0}
+        onChange={this.handleChange.bind(this)}>
           {this.renderTabs()}
       </Tabs>
     );

@@ -1,9 +1,4 @@
 // This is the top-level scss file. Import all other files in here.
 
-@import './base/variables';
-@import './base/typography';
-@import './base/mixins';
-@import './base/extendables';
-@import './components/molecules/main-nav';
 @import './components/pages/global';
 @import './components/pages/home';

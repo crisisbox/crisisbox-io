@@ -3,7 +3,8 @@ var allContent = require.context('./content', false, /\.md$/)
 
 const metadata = {
   name: 'Crisisbox',
-  blurb: 'a rapid response toolkit'
+  blurb: 'a rapid response toolkit',
+  repository: 'https://github.com/crisis-box/'
 }
 
 var pageContent = {};
